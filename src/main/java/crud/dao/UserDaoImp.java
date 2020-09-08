@@ -1,6 +1,7 @@
 package crud.dao;
 
 import crud.entity.User;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -23,6 +24,8 @@ public class UserDaoImp implements UserDao {
     @SuppressWarnings("unchecked")
     public List<User> listUsers() {
         TypedQuery<User> query = sessionFactory.getCurrentSession().createQuery("from User");
+        Session sess = sessionFactory.getCurrentSession();
+//        sess.
         return query.getResultList();
     }
 
