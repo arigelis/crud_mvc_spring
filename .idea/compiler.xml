@@ -7,10 +7,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="crud_mvc_spring" />
+        <module name="filmography" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="8">
-      <module name="crud_mvc_spring" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>
