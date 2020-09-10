@@ -7,29 +7,31 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Service
 @Transactional
 public class UserService {
-//    @Autowired
-//    UserRepository repo;
+    @Autowired
+    UserRepository repo;
 
     public void save(User user) {
-//        repo.save(user);
+        repo.save(user);
     }
 
     public List<User> listAll() {
-//        return (List<User>) repo.findAll();
-        return null;
+        return (List<User>) repo.findAll();
+//        return null;
     }
 
     public User get(Long id) {
-//        return repo.findById(id).get();
-        return null;
+        return repo.findById(id).get();
+//        return null;
     }
 
     public void delete(Long id) {
-//        repo.deleteById(id);
+        repo.deleteById(id);
     }
 }

@@ -1,13 +1,12 @@
 package crud.entity;
 
-import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-@Component
 @Table(name = "users")
-public class User {
+public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -15,13 +14,25 @@ public class User {
     private String firstname;
     @Column
     private String lastname;
+    @Column
+    private Byte age;
+
 
     public User() {
     }
 
-    public User(String firstname, String lastname) {
+    public User(String firstname, String lastname, Byte age) {
         this.firstname = firstname;
         this.lastname = lastname;
+        this.age = age;
+    }
+
+    public Byte getAge() {
+        return age;
+    }
+
+    public void setAge(Byte age) {
+        this.age = age;
     }
 
     public Long getId() {
@@ -54,6 +65,7 @@ public class User {
                 "id=" + id +
                 ", firstname='" + firstname + '\'' +
                 ", lastname='" + lastname + '\'' +
+                ", age='" + age + '\'' +
                 '}';
     }
 }
